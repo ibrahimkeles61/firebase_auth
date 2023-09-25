@@ -25,19 +25,19 @@ export default function LoginScreen() {
 	const handleLogin = () =>
 		auth
 			.signInWithEmailAndPassword(email, password)
-			.then((userCredentials) => {
-				const user = userCredentials.user;
-				console.log("kullanici giris yapti, ", user.email);
-			})
+			// .then((userCredentials) => {
+			// 	const user = userCredentials.user;
+			// 	console.log("user: ", user.email);
+			// })
 			.catch((err) => alert(err.message));
 
 	const handleSignUp = () => {
 		auth
 			.createUserWithEmailAndPassword(email, password)
-			.then((userCredentials) => {
-				const user = userCredentials.user;
-				console.log("kullanici ", user.email);
-			})
+			// .then((userCredentials) => {
+			// 	const user = userCredentials.user;
+			// 	console.log("user: ", user.email);
+			// })
 			.catch((err) => alert(err.message));
 	};
 
@@ -54,7 +54,7 @@ export default function LoginScreen() {
 					onChangeText={(e) => setEmail(e)}
 				/>
 				<TextInput
-					placeholder="Şifre"
+					placeholder="Password"
 					style={styles.input}
 					value={password}
 					onChangeText={(e) => setPassword(e)}
@@ -67,14 +67,14 @@ export default function LoginScreen() {
 					style={styles.button}
 					onPress={handleLogin}
 				>
-					<Text style={styles.buttonText}>Giriş Yap</Text>
+					<Text style={styles.buttonText}>Login</Text>
 				</TouchableOpacity>
 
 				<TouchableOpacity
 					style={[styles.button, styles.outlineButton]}
 					onPress={handleSignUp}
 				>
-					<Text style={styles.outlineButtonText}>Kayıt Ol</Text>
+					<Text style={styles.outlineButtonText}>Register</Text>
 				</TouchableOpacity>
 			</View>
 		</KeyboardAvoidingView>

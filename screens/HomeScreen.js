@@ -19,7 +19,7 @@ export default function HomeScreen() {
 				style={styles.button}
 				onPress={handleSignOut}
 			>
-				<Text style={styles.buttonText}>Çıkış Yap</Text>
+				<Text style={styles.buttonText}>Logout</Text>
 			</TouchableOpacity>
 		</View>
 	);
